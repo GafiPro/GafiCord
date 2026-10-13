@@ -203,8 +203,21 @@ function restore() {
         const unpackedAsar = path.join(resourcesPath, 'app.asar.unpacked');
         const backupUnpacked = path.join(resourcesPath, '_app.asar.unpacked');
 
+        if (!fs.existsSync(resourcesPath)) {
+            console.log(`A versão antiga do Discord já foi removida: ${resourcesPath}`);
+            continue;
+        }
         if (!fs.existsSync(backupAsar)) {
+            if (fs.existsSync(appAsar) && sha256(appAsar) === item.originalSha256) {
+                console.log(`Já está restaurado: ${resourcesPath}`);
+                continue;
+            }
             console.warn(`Cópia original não encontrada; a ignorar: ${resourcesPath}`);
+            remaining.push(item);
+            continue;
+        }
+        if (sha256(backupAsar) !== item.originalSha256) {
+            console.warn(`A cópia de segurança não corresponde ao hash original registado; não alterei: ${resourcesPath}`);
             remaining.push(item);
             continue;
         }
