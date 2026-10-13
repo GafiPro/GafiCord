@@ -1,0 +1,12 @@
+/* ==UserStyle==
+@name GafiCord
+@namespace github.com/GafiPro/GafiCord
+@version 0.2.0
+@description Dark violet theme for Discord Web
+@author GafiPro
+==/UserStyle== */
+
+@-moz-document domain("discord.com") {
+  :root { --gaficord-accent: #9875ff; }
+  #app-mount { background: #0c0e16; }
+}
