@@ -1,12 +1,107 @@
 /* ==UserStyle==
-@name GafiCord
-@namespace github.com/GafiPro/GafiCord
-@version 0.2.0
-@description Dark violet theme for Discord Web
-@author GafiPro
+@name           GafiCord
+@namespace      github.com/GafiPro/GafiCord
+@version        0.2.0
+@description    Tema violeta escuro para o Discord Web
+@author         GafiPro
 ==/UserStyle== */
 
 @-moz-document domain("discord.com") {
-  :root { --gaficord-accent: #9875ff; }
-  #app-mount { background: #0c0e16; }
+  :root,
+  .theme-dark,
+  .theme-darker,
+  .theme-midnight {
+    color-scheme: dark;
+    --brand-500: #9875ff;
+    --brand-560: #855cf1;
+    --brand-600: #7147d9;
+    --text-brand: #c0adff;
+    --text-link: #b6a0ff;
+    --background-primary: #171b2d;
+    --background-secondary: #131625;
+    --background-secondary-alt: #101321;
+    --background-tertiary: #0c0e16;
+    --background-floating: #191d30;
+    --channeltextarea-background: #191d30;
+    --modal-background: #171b2d;
+    --text-normal: #f1efff;
+    --text-muted: #a5a2bc;
+    --interactive-normal: #b8b5ce;
+    --interactive-hover: #f1efff;
+    --background-modifier-hover: rgba(177,155,255,.08);
+    --background-modifier-selected: rgba(152,117,255,.19);
+    --gaficord-border: rgba(178,159,255,.14);
+  }
+
+  #app-mount {
+    background: #0c0e16;
+  }
+
+  #app-mount [class*="guilds"] {
+    background: #0c0e16;
+  }
+
+  #app-mount [class*="sidebar"] {
+    background: linear-gradient(180deg, #111425, #0e101a);
+    border-right: 1px solid var(--gaficord-border);
+  }
+
+  #app-mount [class*="chatContent"] {
+    background: linear-gradient(180deg, #15182a, #111420);
+  }
+
+  #app-mount [class*="membersWrap"],
+  #app-mount [class*="nowPlayingColumn"] {
+    background: #111420;
+    border-left: 1px solid var(--gaficord-border);
+  }
+
+  #app-mount [class*="panels"] {
+    background: rgba(19,22,37,.96);
+    border: 1px solid var(--gaficord-border);
+    border-radius: 12px;
+  }
+
+  #app-mount [class*="channelTextArea"] {
+    background: #131625;
+    border: 1px solid var(--gaficord-border);
+    border-radius: 14px;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  #app-mount [class*="channelTextArea"]:focus-within {
+    border-color: rgba(152,117,255,.65);
+    box-shadow: 0 0 0 2px rgba(152,117,255,.09);
+  }
+
+  #app-mount [class*="messageListItem"] [class*="message"] {
+    border-radius: 8px;
+    transition: background-color 120ms ease;
+  }
+
+  #app-mount [class*="messageListItem"]:hover [class*="message"] {
+    background: rgba(152,117,255,.055);
+  }
+
+  #app-mount [class*="searchBar"] {
+    background: #101321;
+    border: 1px solid var(--gaficord-border);
+    border-radius: 10px;
+  }
+
+  #app-mount [class*="scrollableContainer"] {
+    scrollbar-color: #393252 transparent;
+  }
+
+  ::selection {
+    color: #fff;
+    background: rgba(152,117,255,.48);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #app-mount [class*="channelTextArea"],
+    #app-mount [class*="messageListItem"] [class*="message"] {
+      transition: none;
+    }
+  }
 }
