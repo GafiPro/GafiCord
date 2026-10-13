@@ -1,0 +1,18 @@
+{
+  "name": "gaficord",
+  "version": "0.3.0",
+  "private": true,
+  "description": "A local CSS customization layer for the installed Discord desktop client.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "install-gaficord": "node scripts/gaficord.mjs install",
+    "restore": "node scripts/gaficord.mjs restore",
+    "status": "node scripts/gaficord.mjs status"
+  },
+  "dependencies": {
+    "@electron/asar": "4.3.1"
+  }
+}
