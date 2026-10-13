@@ -1,56 +1,40 @@
 # GafiCord
 
-GafiCord customizes the **existing Discord desktop client**. It is not a Discord clone or a separate chat application.
+GafiCord personaliza o **Discord existente**. Não é uma aplicação de chat alternativa e esta versão **não usa Vencord**.
 
-The repository starts with two parts:
+## Tema para o Discord Web
 
-- **GafiCord Theme** — a dark violet CSS theme loaded by Vencord's Online Themes feature.
-- **GafiCompact** — a small private Vencord plugin that toggles a more compact message layout with `Ctrl+Shift+M`.
+Esta versão personaliza o Discord aberto num navegador como Chrome, Edge ou Firefox. Usa o Stylus, uma extensão gratuita que aplica CSS personalizado a sites.
 
-Everything in this repository is free and open source. No paid APIs, hosted services, or subscriptions are required.
+### Instalação
 
-## Theme installation
+1. Abre o [Discord Web](https://discord.com/app) no navegador.
+2. Instala o Stylus a partir da loja oficial do teu navegador:
+   - [Chrome e navegadores Chromium](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+   - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
+3. Abre o [ficheiro GafiCord.user.css](https://raw.githubusercontent.com/GafiPro/GafiCord/main/themes/GafiCord.user.css). O Stylus deverá reconhecer o formato e mostrar a opção para instalar o estilo.
+4. Instala/ativa o estilo e atualiza a página do Discord.
 
-1. Install Vencord for the Discord desktop client from [vencord.dev](https://vencord.dev/).
-2. Open Discord → **User Settings → Vencord → Themes → Online Themes**.
-3. Add this raw CSS URL:
+### O que muda
 
-   `https://raw.githubusercontent.com/GafiPro/GafiCord/main/themes/GafiCord.theme.css`
+- Paleta escura violeta e índigo.
+- Cores das superfícies, barra lateral e áreas de chat.
+- Caixa de mensagem, foco, realce ao passar o rato e seleção de texto.
 
-4. Enable **GafiCord** in the theme list and reload Discord if needed.
+O tema altera a aparência com CSS; não lê nem envia mensagens, não usa tokens e não precisa de conta de programador.
 
-The theme changes Discord's existing colours and surfaces using CSS. It does not create a separate interface or application.
+## Personalizar
 
-## Install the custom plugin
+Edita `themes/GafiCord.user.css`. As cores principais estão nas variáveis CSS no início do bloco. O Discord pode mudar as suas classes internas, pelo que algumas regras podem precisar de atualização.
 
-Custom plugins are not supported by the standard Vencord installer. They require a development build of Vencord from source.
+## Limites importantes
 
-1. Follow [Vencord's source installation guide](https://docs.vencord.dev/installing/).
-2. Copy `vencord-plugin/gafiCompact/` from this repository into the Vencord source tree at `src/userplugins/gafiCompact/`.
-3. Build and inject Vencord using the commands in the official guide.
-4. Restart Discord and enable **GafiCompact** under **User Settings → Vencord → Plugins**.
+- Esta versão aplica-se ao **Discord Web no navegador**, não à aplicação Discord instalada no Windows.
+- O CSS não adiciona novas funcionalidades ao Discord; modifica apenas o aspeto.
+- O Stylus é uma extensão de terceiros. Instala-o apenas através da loja oficial do teu navegador e revê as permissões que pede.
+- CSS personalizado não é uma opção oficial de temas do Discord e pode deixar de funcionar após alterações no site.
 
-### GafiCompact controls
+## Ligações
 
-- Press **Ctrl+Shift+M** to toggle compact message spacing.
-- Press the shortcut again to restore the normal spacing.
-- The mode resets when Discord restarts.
-
-The shortcut ignores input fields, text areas, and content-editable elements, so it will not trigger while typing.
-
-## Development
-
-- Edit the theme in `themes/GafiCord.theme.css`. The Online Themes URL points to the latest version on the `main` branch.
-- Edit the plugin in `vencord-plugin/gafiCompact/`, then copy it into your Vencord source tree and rebuild to test changes.
-- Discord's internal class names can change with client updates, so CSS selectors may occasionally need maintenance.
-
-## Important note
-
-Discord's Terms of Service restrict unauthorized software that modifies its services. Using a modified client may carry account and stability risks. This repository is an unofficial personal customization project and is not affiliated with Discord or Vencord.
-
-## Links
-
-- [GafiCord source](https://github.com/GafiPro/GafiCord)
-- [Vencord](https://vencord.dev/)
-- [Vencord custom plugin documentation](https://docs.vencord.dev/installing/custom-plugins/)
-- [Discord Terms of Service](https://discord.com/terms)
+- [Repositório GafiCord](https://github.com/GafiPro/GafiCord)
+- [Stylus — código-fonte e informação](https://github.com/openstyles/stylus)
